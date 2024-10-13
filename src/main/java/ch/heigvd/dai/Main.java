@@ -39,6 +39,11 @@ public class Main implements Callable<Integer> {
 
     @Override
     public Integer call() {
+
+        if (asciiArtChoice != 1) {
+            return -1;
+        }
+
         System.out.println("Fichier d'entree : " + inputFile.getAbsolutePath());
         System.out.println("Fichire de sortie : " + outputFile.getAbsolutePath());
         System.out.println("ASCII Art choisi : " + asciiArtChoice);
