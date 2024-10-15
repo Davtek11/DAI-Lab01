@@ -1,22 +1,37 @@
 package ch.heigvd.dai;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
-import java.io.BufferedWriter;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
-import ch.heigvd.dai.TextConverter;
 
 public class TextFileWriter {
-    public void writeASCIIArt(String filename, String text) throws IOException {
-        Writer writer = new FileWriter(filename, StandardCharsets.UTF_8);
-        BufferedWriter bwriter = new BufferedWriter(writer);
+    public void writeASCIIArt(String filename, String text) {
 
-        TextConverter textConverter = new TextConverter();
-        // TODO convert each char of string, add char to file, etc
+        Writer writer;
+        BufferedWriter bWriter = null;
 
+        try {
+            writer = new FileWriter(filename, StandardCharsets.UTF_8);
+            bWriter = new BufferedWriter(writer);
 
-        writer.flush();
-        writer.close();
+            char[][] result = TextConverter.convertText(text);
+
+            for (char[] charTab : result) {
+                for (char c : charTab) {
+                    bWriter.write(c);
+                }
+            }
+
+        }catch(IOException e) {
+            System.out.println("Exception: "+ e);
+        }finally {
+            if(bWriter != null) {
+                try{
+                    bWriter.flush();
+                    bWriter.close();
+                }catch(IOException e) {
+                    System.out.println("Exception in close buffered writer: "+ e);
+                }
+            }
+        }
     }
 }
