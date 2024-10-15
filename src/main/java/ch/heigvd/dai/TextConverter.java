@@ -4,11 +4,9 @@ public class TextConverter {
 
     public static char[][] convertText(String s) {
         //on convertit tout en majuscule pour la facilité
-        s.toUpperCase();
-        char[] chars = new char[s.length()];
-        for (int i = 0; i < s.length(); i++) {
-            chars[i] = s.charAt(i);
-        }
+        s = s.toUpperCase();
+        char[] chars = s.toCharArray();
+        OneCharMap ocm = new OneCharMap();
 
         int height = 5; //a changer si besoin
         //height + 1 pour les espaces
@@ -16,8 +14,8 @@ public class TextConverter {
         //tableau temporaire pour chaque caractère
         char[][] tabTemp = new char[height][height];
 
-        for (int i = 0; i < chars.length+1; i++) {
-            //tabTemp = FONCTION
+        for (int i = 0; i < chars.length; i++) {
+            tabTemp = ocm.oneCharMap.get(chars[i]);
             for (int j = 0; j < height; j++) {
                 for (int k = 0; k < height; k++) {
 
