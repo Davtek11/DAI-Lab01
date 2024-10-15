@@ -2,7 +2,7 @@ package ch.heigvd.dai;
 
 public class TextConverter {
 
-    public char[][] convertText(String s) {
+    public static char[][] convertText(String s) {
         //on convertit tout en majuscule pour la facilité
         s.toUpperCase();
         char[] chars = new char[s.length()];
