@@ -3,7 +3,6 @@ package ch.heigvd.dai;
 import java.io.*;
 import picocli.CommandLine;
 import java.util.concurrent.Callable;
-import ch.heigvd.dai.*;
 
 @CommandLine.Command(
         name = "txtToASCIIArt",
@@ -49,7 +48,7 @@ public class Main implements Callable<Integer> {
         }
 
         System.out.println("Fichier d'entree : " + inputFileName);
-        System.out.println("Fichire de sortie : " + outputFileName);
+        System.out.println("Fichier de sortie : " + outputFileName);
         System.out.println("ASCII Art choisi : " + asciiArtChoice);
         if (symboleString.equals("#")) {
             System.out.println("Symbole par défaut : " + symboleString);
