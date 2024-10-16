@@ -11,6 +11,11 @@ public class TextConverter {
         int height = 5; //a changer si besoin
         //height + 1 pour les espaces
         char[][] tabArt = new char[height][chars.length*(height+1)];
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < chars.length*(height+1); j++) {
+                tabArt[i][j] = ' ';
+            }
+        }
         //tableau temporaire pour chaque caractère
         char[][] tabTemp = new char[height][height];
 

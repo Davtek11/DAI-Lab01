@@ -19,7 +19,6 @@ public class TextFileReader {
             while ((character = (char) breader.read()) != '\n') {
                 result = result + character;
             }
-            System.out.println(result);
         }
         catch (IOException ex) {
             System.err.println("Error opening file : " + filename);
