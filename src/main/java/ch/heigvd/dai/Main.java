@@ -31,9 +31,9 @@ public class Main implements Callable<Integer> {
     private int asciiArtChoice;
 
     @CommandLine.Option(names = {"-s", "--symbole"},
-            description = "Symbole voulu pour l'ASCII art",
-            required = false)
-    private char symbole;
+            description = "Symbole voulu pour l'ASCII art numero 1",
+            defaultValue = "#")
+    private String symboleString;
 
 
     public static void main(String[] args) {
@@ -51,6 +51,13 @@ public class Main implements Callable<Integer> {
         System.out.println("Fichier d'entree : " + inputFileName);
         System.out.println("Fichire de sortie : " + outputFileName);
         System.out.println("ASCII Art choisi : " + asciiArtChoice);
+        if (symboleString.equals("#")) {
+            System.out.println("Symbole par défaut : " + symboleString);
+        }
+        else {
+            System.out.print("Symbole choisi : " + symboleString);
+        }
+        char symbole = symboleString.charAt(0);
 
         //lis le fichier
         TextFileReader textFileReader = new TextFileReader();
@@ -58,7 +65,7 @@ public class Main implements Callable<Integer> {
 
         //Ecrit dans le fichier
         TextFileWriter textFileWriter = new TextFileWriter();
-        textFileWriter.writeASCIIArt(outputFileName, textToConvert);
+        textFileWriter.writeASCIIArt(outputFileName, textToConvert, symbole);
         return 0;
     }
 }

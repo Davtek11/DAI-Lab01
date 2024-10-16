@@ -2,11 +2,11 @@ package ch.heigvd.dai;
 
 public class TextConverter {
 
-    public static char[][] convertText(String s) {
+    public static char[][] convertText(String s, char symbole) {
         //on convertit tout en majuscule pour la facilité
         s = s.toUpperCase();
         char[] chars = s.toCharArray();
-        OneCharMap ocm = new OneCharMap();
+        OneCharMap ocm = new OneCharMap(symbole);
 
         int height = 5; //a changer si besoin
         //height + 1 pour les espaces
