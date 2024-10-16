@@ -65,7 +65,7 @@ public class Main implements Callable<Integer> {
 
         //Ecrit dans le fichier
         TextFileWriter textFileWriter = new TextFileWriter();
-        textFileWriter.writeASCIIArt(outputFileName, textToConvert, symbole);
+        textFileWriter.writeASCIIArt(outputFileName, textToConvert, asciiArtChoice, symbole);
         return 0;
     }
 }

@@ -1,4 +1,5 @@
 package ch.heigvd.dai;
+import charmaps.*;
 
 public class TextConverter {
 
@@ -6,13 +7,15 @@ public class TextConverter {
         //on convertit tout en majuscule pour la facilité
         s = s.toUpperCase();
         char[] chars = s.toCharArray();
+        int height = 0;
+        int width = 0;
         OneCharMap ocm = new OneCharMap(symbole);
 
-        int height = 5; //a changer si besoin
+
         //height + 1 pour les espaces
-        char[][] tabArt = new char[height][chars.length*(height+1)];
+        char[][] tabArt = new char[height][chars.length*(width+1)];
         for (int i = 0; i < height; i++) {
-            for (int j = 0; j < chars.length*(height+1); j++) {
+            for (int j = 0; j < chars.length*(width+1); j++) {
                 tabArt[i][j] = ' ';
             }
         }
@@ -20,7 +23,7 @@ public class TextConverter {
         char[][] tabTemp = new char[height][height];
 
         for (int i = 0; i < chars.length; i++) {
-            tabTemp = ocm.oneCharMap.get(chars[i]);
+            tabTemp = ocm.getCharMap().get(chars[i]);
             for (int j = 0; j < height; j++) { //horizontale, +1 pour les espaces
                 for (int k = 0; k < height; k++) { //verticale
 
