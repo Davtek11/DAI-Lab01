@@ -21,17 +21,16 @@ public class TextFileReader {
             }
         }
         catch (IOException ex) {
-            System.err.println("Error opening file : " + filename);
+            System.err.println("Exception: " + ex);
         }
         finally {
-            try {
-                if (breader != null) {
+            if (breader != null) {
+                try {
                     breader.close();
                     reader.close();
+                } catch (IOException ex) {
+                    System.err.println("Error closing file : " + filename);
                 }
-            }
-            catch (IOException ex) {
-                System.err.println("Error closing file : " + filename);
             }
         }
         return result;

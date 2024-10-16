@@ -30,7 +30,7 @@ public class TextFileWriter {
                     bWriter.flush();
                     bWriter.close();
                 }catch(IOException e) {
-                    System.out.println("Exception in close buffered writer: "+ e);
+                    System.out.println("Exception closing writer: "+ e);
                 }
             }
         }
