@@ -19,6 +19,7 @@ public class TextFileWriter {
                 for (char c : charTab) {
                     bWriter.write(c);
                 }
+                bWriter.newLine();
             }
 
         }catch(IOException e) {

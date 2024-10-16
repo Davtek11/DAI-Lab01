@@ -17,8 +17,7 @@ public class TextFileReader {
 
             char character;
             while ((character = (char) breader.read()) != '\n') {
-                //result += String.valueOf(character);
-                result.concat(String.valueOf(character));
+                result = result + character;
             }
         }
         catch (IOException ex) {
@@ -35,7 +34,6 @@ public class TextFileReader {
                 System.err.println("Error closing file : " + filename);
             }
         }
-
         return result;
     }
 }
