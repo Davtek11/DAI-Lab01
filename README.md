@@ -31,7 +31,7 @@ Pour build le projet en fichier .jar avec l'aide de Maven, entrez cette commande
 
 ## Run l'application
 
-Pour pouvoir lancer le .jar créé suite build effectué ci-dessus, entrez cette commande :
+Pour pouvoir lancer le .jar créé suite au build effectué ci-dessus, entrez cette commande :
 ```
 java -jar target/DAI-Lab01-1.0-SNAPSHOT.jar <option>
 ```
@@ -57,6 +57,7 @@ Nous avons mis 3 choix différents d'ASCII arts :
 1. Texte en gros
 2. Texte en petit
 3. Texte en 3D
+
 Voici à quoi ressemble la lettre `A` dans les 3 cas :
 
 ```
