@@ -1,9 +1,17 @@
 # DAI Laboratoire 1 - Java IOS & CLI
 
-Cette application prend un texte dans un fichier .txt, le convertit en 3 différents ASCII Arts et le renvoie
+Cette application prend un texte dans un fichier .txt, le convertit en ASCII Art (à choisir parmi 3 différents) et le renvoie
 dans un nouveau fichier .txt
 
 Pour ce faire, nous utilisons picocli qui gère les options en ligne de commande (CLI).
+
+## Points importants
+
+Le programme n'accepte que les caractères **alphanumériques**, ainsi que les symboles suivants:
+
+. , + - _ : ! / '
+
+Les lettres minuscules sont automatiquement converties en majuscules par le programme.
 
 ## Clôner et build l'application
 
@@ -49,3 +57,6 @@ arts, cela ne changera rien.
 
 Plusieurs exemples sont disponibles dans le dossier `src/examples`.
 
+- l'exemple 1 montre le premier Ascii Art, avec comme symbole O
+- l'exemple 2 montre le deuxième Ascii Art
+- l'exemple 3 montre le troisième Ascii Art

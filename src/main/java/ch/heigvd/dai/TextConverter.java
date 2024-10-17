@@ -7,15 +7,17 @@ public class TextConverter {
 
     public static char[][] convertText(String s, int choice, char symbole) {
 
-        //on convertit tout en majuscule pour la facilité
         s = s.toUpperCase();
         char[] chars = s.toCharArray();
+
         int height = 0;
         int width = 0;
+
+        // Array for full Ascii Art
         char [][] tabArt = new char[height][width];
 
         try {
-
+            // Choose correct Ascii Art
             Charmap ocm = switch (choice) {
                 case 1 -> new OneCharMap(symbole);
                 case 2 -> new SmallCharMap();
@@ -23,6 +25,7 @@ public class TextConverter {
                 default -> throw new IllegalArgumentException();
             };
 
+            // Dimensions depend on chosen Ascii Art
             height = ocm.getHeight();
             width = ocm.getWidth();
 
@@ -33,16 +36,17 @@ public class TextConverter {
                     tabArt[i][j] = ' ';
                 }
             }
-            //tableau temporaire pour chaque caractère
+            // Array for current character
             char[][] tabTemp = new char[height][width];
 
             for (int i = 0; i < chars.length; i++) {
+                // Get Ascii Art for current character and write it
                 tabTemp = ocm.getCharMap().get(chars[i]);
                 if(tabTemp == null) {
                     throw new IOException();
                 }
-                for (int j = 0; j < width; j++) { //horizontale, +1 pour les espaces
-                    for (int k = 0; k < height; k++) { //verticale
+                for (int j = 0; j < width; j++) { // Horizontal
+                    for (int k = 0; k < height; k++) { // Vertical
                         tabArt[k][i*(width+1)+j] = tabTemp[k][j];
                     }
                 }

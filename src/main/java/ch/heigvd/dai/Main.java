@@ -17,22 +17,22 @@ public class Main implements Callable<Integer> {
 
     @CommandLine.Option(
             names = {"-i", "--input"},
-            description = "Fichier texte d'entrée",
+            description = "Input text file",
             required = true)
     private String inputFileName;
 
     @CommandLine.Option(names = {"-o", "--output"},
-            description = "Fichier texte de sortie",
+            description = "Output text file",
             required = true)
     private String outputFileName;
 
     @CommandLine.Option(names = {"-a", "--art"},
-            description = "Choix de l'ASCII Art (1, 2 ou 3)",
+            description = "Choice of ASCII Art (1, 2 ou 3)",
             required = true)
     private int asciiArtChoice;
 
     @CommandLine.Option(names = {"-s", "--symbole"},
-            description = "Symbole voulu pour l'ASCII art numero 1",
+            description = "Chosen symbol for Ascii Art 1",
             defaultValue = "#")
     private String symboleString;
 
@@ -50,23 +50,25 @@ public class Main implements Callable<Integer> {
             return -1;
         }
 
-        System.out.println("Fichier d'entree : " + inputFileName);
-        System.out.println("Fichier de sortie : " + outputFileName);
-        System.out.println("ASCII Art choisi : " + asciiArtChoice);
-        if (symboleString.equals("#")) {
-            System.out.println("Symbole par défaut : " + symboleString);
-        }
-        else {
-            System.out.print("Symbole choisi : " + symboleString);
+        System.out.println("Input file : " + inputFileName);
+        System.out.println("Output file : " + outputFileName);
+        System.out.println("Chosen ASCII Art : " + asciiArtChoice);
+        if(asciiArtChoice == 1) {
+            if (symboleString.equals("#")) {
+                System.out.println("Default symbol : " + symboleString);
+            }
+            else {
+                System.out.print("Chosen symbol : " + symboleString);
+            }
         }
         char symbole = symboleString.charAt(0);
         int choice = asciiArtChoice;
 
-        //lis le fichier
+        // Read text in file
         TextFileReader textFileReader = new TextFileReader();
         String textToConvert = textFileReader.read(inputFileName);
 
-        //Ecrit dans le fichier
+        // Write result in file
         TextFileWriter textFileWriter = new TextFileWriter();
         textFileWriter.writeASCIIArt(outputFileName, textToConvert, choice, symbole);
         return 0;
