@@ -2,6 +2,8 @@ package ch.heigvd.dai;
 
 import java.io.*;
 import picocli.CommandLine;
+
+import java.util.Arrays;
 import java.util.concurrent.Callable;
 
 @CommandLine.Command(
@@ -43,7 +45,8 @@ public class Main implements Callable<Integer> {
     @Override
     public Integer call() {
 
-        if (asciiArtChoice != 1 && asciiArtChoice != 2 && asciiArtChoice != 3) {
+        if (!Arrays.asList(1, 2, 3).contains(asciiArtChoice)) {
+            System.out.println("Invalid ascii art choice.");
             return -1;
         }
 
