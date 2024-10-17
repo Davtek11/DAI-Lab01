@@ -27,7 +27,7 @@ public class Main implements Callable<Integer> {
     private String outputFileName;
 
     @CommandLine.Option(names = {"-a", "--art"},
-            description = "Choix de l'ASCII Art (1 ou 2)",
+            description = "Choix de l'ASCII Art (1, 2 ou 3)",
             required = true)
     private int asciiArtChoice;
 
