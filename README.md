@@ -29,12 +29,16 @@ Pour build le projet en fichier .jar avec l'aide de Maven, entrez cette commande
 ./mvnw dependancy:go-offline clean compile package
 ```
 
+A noter que vous pouvez compiler directement dans IntelliJ grâce a la config `Package application as JAR file`.
+
 ## Run l'application
 
 Pour pouvoir lancer le .jar créé suite au build effectué ci-dessus, entrez cette commande :
 ```
 java -jar target/DAI-Lab01-1.0-SNAPSHOT.jar <option>
 ```
+Nous avons également créé une configuration IntelliJ `Run the application`. Mais attention, elle run seulement
+l'application avec les fichier `input.txt` et `output.txt` dans le dossier `src`, et avec le premier ASCII art.
 
 ## Options CLI
 
