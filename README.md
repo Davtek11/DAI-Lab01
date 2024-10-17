@@ -60,9 +60,10 @@ arts, cela ne changera rien.
 Nous avons mis 3 choix différents d'ASCII arts :
 1. Texte en gros
 2. Texte en petit
-3. Texte en 3D
+3. Texte gros en 3D
 
 Voici à quoi ressemble la lettre `A` dans les 3 cas :
+
 
 ```
   #             |▓▓▓▓▓ 
@@ -79,7 +80,7 @@ Plusieurs exemples sont disponibles dans le dossier `src/examples`. Les commande
 
 ### Exemple 1
 
-Pour ce exemple, on choisi l'ASCI art 1 et le symbole `O`
+Pour ce exemple, on choisi l'ASCI art 1 et le symbole `O` :
 ```
 java -jar target/DAI-Lab01-1.0-SNAPSHOT.jar -i src/examples/ex1_input.txt -o src/examples/ex1_output.txt -a 1 -s O
 ```
@@ -94,7 +95,7 @@ O   O OOOO   OOO  OOOO  OOOOO O      OOO  O   O OOOOO  O    O   O OOOOO O   O O 
 
 ### Exemple 2
 
-Pour cet exemple, on choisit l'ASCII art 2
+Pour cet exemple, on choisit l'ASCII art 2 :
 ```
 java -jar target/DAI-Lab01-1.0-SNAPSHOT.jar -i src/examples/ex2_input.txt -o src/examples/ex2_output.txt -a 2
 ```
@@ -108,7 +109,7 @@ Le texte de base était : `DAI, c'est super !`. Et voici le résultat :
 
 ### Exemple 3
 
-Pour cet exemple, on choisit l'ASCII art 3
+Pour cet exemple, on choisit l'ASCII art 3 :
 ```
 java -jar target/DAI-Lab01-1.0-SNAPSHOT.jar -i src/examples/ex3_input.txt -o src/examples/ex3_output.txt -a 3
 ```
