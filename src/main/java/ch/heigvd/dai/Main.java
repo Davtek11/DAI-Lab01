@@ -43,7 +43,7 @@ public class Main implements Callable<Integer> {
     @Override
     public Integer call() {
 
-        if (asciiArtChoice != 1) {
+        if (asciiArtChoice != 1 && asciiArtChoice != 2) {
             return -1;
         }
 
@@ -57,6 +57,7 @@ public class Main implements Callable<Integer> {
             System.out.print("Symbole choisi : " + symboleString);
         }
         char symbole = symboleString.charAt(0);
+        int choice = asciiArtChoice;
 
         //lis le fichier
         TextFileReader textFileReader = new TextFileReader();
@@ -64,7 +65,7 @@ public class Main implements Callable<Integer> {
 
         //Ecrit dans le fichier
         TextFileWriter textFileWriter = new TextFileWriter();
-        textFileWriter.writeASCIIArt(outputFileName, textToConvert, symbole);
+        textFileWriter.writeASCIIArt(outputFileName, textToConvert, choice, symbole);
         return 0;
     }
 }

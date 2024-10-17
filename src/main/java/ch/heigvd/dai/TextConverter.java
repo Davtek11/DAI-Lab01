@@ -1,39 +1,48 @@
 package ch.heigvd.dai;
+import charmaps.*;
 
 import java.io.IOException;
 
 public class TextConverter {
 
-    public static char[][] convertText(String s, char symbole) {
+    public static char[][] convertText(String s, int choice, char symbole) {
 
         //on convertit tout en majuscule pour la facilité
         s = s.toUpperCase();
         char[] chars = s.toCharArray();
-        OneCharMap ocm = new OneCharMap(symbole);
+        int height = 0;
+        int width = 0;
+        char [][] tabArt = new char[height][width];
 
-        int height = 5; //a changer si besoin
-        //height + 1 pour les espaces
-        char [][] tabArt = new char[height][chars.length*(height+1)];
+        try {
 
-        try{
+            Charmap ocm = switch (choice) {
+                case 1 -> new OneCharMap(symbole);
+                case 2 -> new SmallCharMap();
+                default -> throw new IllegalArgumentException();
+            };
+
+            height = ocm.getHeight();
+            width = ocm.getWidth();
+
+            tabArt = new char[height][chars.length*(width+1)];
+
             for (int i = 0; i < height; i++) {
-                for (int j = 0; j < chars.length*(height+1); j++) {
+                for (int j = 0; j < chars.length*(width+1); j++) {
                     tabArt[i][j] = ' ';
                 }
             }
             //tableau temporaire pour chaque caractère
-            char[][] tabTemp = new char[height][height];
+            char[][] tabTemp = new char[height][width];
 
             for (int i = 0; i < chars.length; i++) {
-                tabTemp = ocm.oneCharMap.get(chars[i]);
+                tabTemp = ocm.getCharMap().get(chars[i]);
                 if(tabTemp == null) {
                     throw new IOException();
                 }
-                for (int j = 0; j < height; j++) { //horizontale, +1 pour les espaces
+                for (int j = 0; j < width; j++) { //horizontale, +1 pour les espaces
                     for (int k = 0; k < height; k++) { //verticale
-
-                        tabArt[k][i*(height+1)+j] = tabTemp[k][j];
-
+                        tabArt[k][i*(width+1)+j] = tabTemp[k][j];
                     }
                 }
             }
@@ -46,6 +55,8 @@ public class TextConverter {
             System.out.println("Exception: Invalid character in input");
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Exception: " + e);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Exception: choice of ascii art does not exist");
         }
         return tabArt;
     }
