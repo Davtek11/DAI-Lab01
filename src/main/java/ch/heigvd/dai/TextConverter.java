@@ -47,11 +47,7 @@ public class TextConverter {
                     }
                 }
             }
-            for (int i = 0; i < tabArt.length; i++) {
-                for (int j = 0; j < tabArt[i].length; j++) {
-                    System.out.print(tabArt[i][j]);
-                }
-            }
+
         }catch(IOException e) {
             System.out.println("Exception: Invalid character in input");
         } catch (ArrayIndexOutOfBoundsException e) {
