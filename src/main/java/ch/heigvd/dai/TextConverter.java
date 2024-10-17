@@ -19,6 +19,7 @@ public class TextConverter {
             Charmap ocm = switch (choice) {
                 case 1 -> new OneCharMap(symbole);
                 case 2 -> new SmallCharMap();
+                case 3 -> new CharMap3D();
                 default -> throw new IllegalArgumentException();
             };
 

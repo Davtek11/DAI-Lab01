@@ -43,7 +43,7 @@ public class Main implements Callable<Integer> {
     @Override
     public Integer call() {
 
-        if (asciiArtChoice != 1 && asciiArtChoice != 2) {
+        if (asciiArtChoice != 1 && asciiArtChoice != 2 && asciiArtChoice != 3) {
             return -1;
         }
 
