@@ -66,6 +66,7 @@ Voici à quoi ressemble la lettre `A` dans les 3 cas :
 
 
 ```
+
   #             |▓▓▓▓▓ 
  # #      /\    |▓  |▓ 
 #####    /--\   |▓▓▓▓▓ 
