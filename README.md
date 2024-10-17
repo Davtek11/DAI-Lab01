@@ -53,10 +53,66 @@ A noter que l'option du symbole n'est pas obligatoire et qu'elle n'est utilisée
 ASCII Art, vous n'êtes donc pas obligé d'entrer cette option. Si vous entrez un symbole pour les deux autres
 arts, cela ne changera rien.
 
+Nous avons mis 3 choix différents d'ASCII arts :
+1. Texte en gros
+2. Texte en petit
+3. Texte en 3D
+Voici à quoi ressemble la lettre `A` dans les 3 cas :
+
+```
+  #             |▓▓▓▓▓ 
+ # #      /\    |▓  |▓ 
+#####    /--\   |▓▓▓▓▓ 
+#   #           |▓  |▓ 
+#   #           |▓  |▓ 
+
+```
+
 ## Exemples
 
-Plusieurs exemples sont disponibles dans le dossier `src/examples`.
+Plusieurs exemples sont disponibles dans le dossier `src/examples`. Les commandes sont effectuées à la racine du projet.
 
-- l'exemple 1 montre le premier Ascii Art, avec comme symbole O
-- l'exemple 2 montre le deuxième Ascii Art
-- l'exemple 3 montre le troisième Ascii Art
+### Exemple 1
+
+Pour ce exemple, on choisi l'ASCI art 1 et le symbole `O`
+```
+java -jar target/DAI-Lab01-1.0-SNAPSHOT.jar -i src/examples/ex1_input.txt -o src/examples/ex1_output.txt -a 1 -s O
+```
+Le texte de base était : `abcdefghijklmnopqrstuvwxyz .,+-/=:! 0123456789`. Et voici le résultat :
+```
+  O   OOOO   OOO  OOOO  OOOOO OOOOO  OOOO O   O OOOOO OOOOO O   O O     O   O O   O  OOO  OOOO   OOO  OOOO   OOOO OOOOO O   O O   O O   O O   O O   O OOOOO                     O             O         O     O          OOO    O    OOO  OOOOO   OO  OOOOO  OOO  OOOOO  OOO   OOO  
+ O O  O   O O   O O   O O     O     O     O   O   O     O   O  O  O     OO OO OO  O O   O O   O O   O O   O O       O   O   O O   O O   O  O O   O O      O                     O            O   OOO          O         O  OO  OO   O   O     O  O O  O     O        O  O   O O   O 
+OOOOO OOOO  O     O   O OOOO  OOOO  O OO  OOOOO   O     O   OOO   O     O O O O O O O   O OOOO  O O O OOOO   OOO    O   O   O O   O O   O   O     O    OOO                    OOOOO  OOO    O                 O         O O O   O     OO  OOOOO OOOOO OOOO  OOOO    O   OOOOO OOOOO 
+O   O O   O O   O O   O O     O     O   O O   O   O   O O   O  O  O     O   O O  OO O   O O     O  OO O   O     O   O   O   O  O O  O O O  O O    O   O                   O     O          O     OOO                    OO  O   O    O        O    O      O O   O  O    O   O     O 
+O   O OOOO   OOO  OOOO  OOOOO O      OOO  O   O OOOOO  O    O   O OOOOO O   O O   O  OOO  O      OOOO O   O OOOO    O    OOO    O    O O  O   O   O   OOOOO         O    O      O         O             O     O          OOO   OOO  OOOOO OOOOO    O  OOOO   OOO  O      OOO  OOOO  
+```
+
+### Exemple 2
+
+Pour cet exemple, on choisit l'ASCII art 2
+```
+java -jar target/DAI-Lab01-1.0-SNAPSHOT.jar -i src/examples/ex2_input.txt -o src/examples/ex2_output.txt -a 2
+```
+Le texte de base était : `DAI, c'est super !`. Et voici le résultat :
+```
+                               /     _                                  _             |   
+|¯\   /\  ¯|¯             /¯        |_  (¯   ¯|¯       (¯   | |  |¯)   |_  |¯)        |   
+|_/  /--\ _|_   /         \_        |_   _)   |         _)  |_|  |¯    |_  |¯\        o   
+
+```
+
+### Exemple 3
+
+Pour cet exemple, on choisit l'ASCII art 3
+```
+java -jar target/DAI-Lab01-1.0-SNAPSHOT.jar -i src/examples/ex3_input.txt -o src/examples/ex3_output.txt -a 3
+```
+Le texte de base était : `6/3=2 4+5=9`. Et voici le résultat :
+```
+ |▓▓▓▓     |▓ |▓▓▓▓         |▓▓▓▓         |▓            |▓▓▓▓▓        |▓▓▓▓▓ 
+|▓        |▓     |▓   |▓▓▓     |▓         |▓ |▓    |▓   |▓      |▓▓▓  |▓  |▓ 
+|▓▓▓▓▓   |▓    |▓▓▓          |▓▓▓         |▓▓▓▓▓  |▓▓▓  |▓▓▓▓         |▓▓▓▓▓ 
+|▓  |▓  |▓       |▓   |▓▓▓  |▓               |▓    |▓      |▓   |▓▓▓      |▓ 
+ |▓▓▓  |▓     |▓▓▓▓         |▓▓▓▓▓           |▓         |▓▓▓▓         |▓▓▓▓  
+
+```
